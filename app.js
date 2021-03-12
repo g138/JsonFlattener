@@ -1,5 +1,14 @@
-const jsonfile = require('./jsonFile.json');
-// console.log(jsonfile);
+
+var fileName = '';
+
+process.argv.forEach(function (val, index, array) {
+    if(index === 2) {
+        fileName = val;
+    }
+});
+
+const jsonfile = require(fileName);
+
 function fnx(obj) {
     let res = {}; 
     for (const i in obj) { 
